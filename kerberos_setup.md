@@ -148,6 +148,12 @@ kadmin.local:  addprinc -randkey host/kdc.cw.com
 kadmin.local:  ktadd host/kdc.cw.com
 ```
 
+## Setup kerberos client
+
+```
+yum -y install krb5-workstation
+```
+
 Transfer your `/etc/krb5.conf` (which got created from above command) from the
 KDC server to the client. Hop onto the client server, install the Kerberos
 client package and add some host principals:
