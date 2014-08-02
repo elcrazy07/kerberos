@@ -159,12 +159,8 @@ KDC server to the client. Hop onto the client server, install the Kerberos
 client package and add some host principals:
 
 ```
-kadmin -w hadoop -p kadmin/admin -q 'list princs'
-```
-
-```
 [root@client ~]# yum install krb5-workstation
-[root@client ~]# kadmin.local
-kadmin.local:  addpinc --randkey host/client.example.com
-kadmin.local:  ktadd host/kdc.example.com
+[root@client ~]# kadmin -p root/admin
+kadmin:  addpinc --randkey host/client.example.com
+kadmin:  ktadd host/kdc.example.com
 ```
